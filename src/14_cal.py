@@ -30,3 +30,19 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+
+
+def calendar_func(**attributes):
+  if attributes == None:
+    print(calendar.month(2020, 'August'))
+  elif len(attributes) == 1:
+    months = int(sys.argv[1])
+    print(calendar.month(2020, months))
+  else:
+    months = int(sys.argv[1])
+    years = int(sys.argv[2])
+    print(calendar.month(years, months))
+
+
+calendar_func()
