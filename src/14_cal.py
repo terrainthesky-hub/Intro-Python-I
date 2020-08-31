@@ -34,15 +34,19 @@ from datetime import datetime
 
 
 def calendar_func(**attributes):
-  if attributes == None:
-    print(calendar.month(2020, 'August'))
-  elif len(attributes) == 1:
+  if len(sys.argv) == 1:
+    today = datetime.today()
+    print(calendar.month(today.year, today.month))
+    # print(calendar.month(2020, 8))
+  elif len(sys.argv) == 2:
     months = int(sys.argv[1])
     print(calendar.month(2020, months))
-  else:
+  elif len(sys.argv) == 3:
     months = int(sys.argv[1])
     years = int(sys.argv[2])
     print(calendar.month(years, months))
+  else:
+    print("Usage: cal.py [month] [year]")
 
 
 calendar_func()
