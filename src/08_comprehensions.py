@@ -36,6 +36,6 @@ print(y)
 x = input("Enter comma-separated numbers: ").split(',')
 
 # What do you need between the square brackets to make it work?
-y = [x.remove(z) if (((int(z)) % 2 == 1)) else None for z in x]
-
+# y = [x.remove(z) if (((int(z)) % 2 == 1)) else None for z in x]
+y = [x.remove(z) for z in x if int(z) % 2 == 1]
 print(x)
